@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>2dekans voor eten - Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-groep {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: var(--tekst-donker);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--randkleur);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navigatie">
+    <a href="index.html" class="logo">🌱 2dekans voor eten</a>
+    <div class="menu-links">
+      <a href="index.html">Home</a>
+      <a href="hoe-werkt-het.html">Hoe werkt het?</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="vind-eten.html">Vind eten</a>
+      <a href="contact.html" class="actief">Contact</a>
+    </div>
+    <a href="vind-eten.html" class="nav-actieknop">Vind eten &rarr;</a>
+  </nav>
+
+  <main class="pagina-inhoud pagina-inhoud--ruim">
+    
+    <!-- ✏️ KOPTEKST -->
+    <div style="margin-bottom: 8px;">
+      <h1 style="font-size: 32px; color: var(--donkergroen); margin-bottom: 6px;">Neem contact met ons op</h1>
+      <p style="color: var(--tekst-grijs); font-size: 15px; line-height: 1.4;">Heb je een vraag, suggestie of wil je restaurantpartner worden? Laat een bericht achter.</p>
+    </div>
+
+    <div class="grid-2">
+      
+      <!-- Contactformulier links -->
+      <form class="witte-kaart" onsubmit="alert('Bedankt voor je bericht! We nemen spoedig contact op.'); return false;">
+        <div class="form-groep">
+          <label>Naam</label>
+          <input type="text" placeholder="Jouw voor- en achternaam" required>
+        </div>
+
+        <div class="form-groep">
+          <label>E-mailadres</label>
+          <input type="email" placeholder="naam@voorbeeld.nl" required>
+        </div>
+
+        <div class="form-groep">
+          <label>Bericht</label>
+          <textarea rows="3" placeholder="Typ hier je vraag of bericht..." required></textarea>
+        </div>
+
+        <button type="submit" class="knop-primair" style="border: none; cursor: pointer; width: 100%;">Bericht versturen &rarr;</button>
+      </form>
+
+      <!-- Gegevens rechts -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="witte-kaart" style="padding: 18px 20px;">
+          <h3 style="font-size: 18px; color: var(--donkergroen); margin-bottom: 10px;">Direct bereikbaar</h3>
+          <p style="font-size: 15px; margin-bottom: 8px;">📧 <b>E-mail:</b> info@2dekansvooreten.nl</p>
+          <p style="font-size: 15px; margin-bottom: 8px;">📞 <b>Telefoon:</b> +31 20 123 45 67</p>
+          <p style="font-size: 15px;">📍 <b>Adres:</b> Damrak 123, 1012 JS Amsterdam</p>
+        </div>
+
+        <div style="background-color: var(--lichtgroen); border-radius: 12px; padding: 18px 16px; text-align: center;">
+          <h4 style="color: var(--donkergroen); font-size: 18px;">We horen graag van je! 💚</h4>
+          <p style="font-size: 14px; color: var(--tekst-grijs); margin-top: 6px; line-height: 1.4;">Op werkdagen antwoorden we meestal binnen 24 uur.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Onderste status -->
+    <div class="witte-kaart" style="text-align: center; font-size: 14px; color: var(--tekst-grijs); padding: 16px;">
+      KvK: 12345678 • Gevestigd in Nederland • Samen tegen voedselverspilling
+    </div>
+
+    <section class="impact-sectie pagina-einde" aria-labelledby="contact-tips-titel">
+      <div class="impact-sectie__intro">
+        <h2 id="contact-tips-titel">We denken graag met je mee</h2>
+        <p>Je bericht komt het snelst op de juiste plek met een beetje context.</p>
+      </div>
+      <article class="impact-sectie__item">
+        <span class="impact-sectie__icoon" aria-hidden="true">👋</span>
+        <div>
+          <h3>Vertel wie je bent</h3>
+          <p>Laat je naam en e-mailadres achter, dan kunnen we je beantwoorden.</p>
+        </div>
+      </article>
+      <article class="impact-sectie__item">
+        <span class="impact-sectie__icoon" aria-hidden="true">💬</span>
+        <div>
+          <h3>Deel je vraag</h3>
+          <p>Een paar details helpen ons je vraag goed te begrijpen.</p>
+        </div>
+      </article>
+      <article class="impact-sectie__item">
+        <span class="impact-sectie__icoon" aria-hidden="true">⏱️</span>
+        <div>
+          <h3>We reageren snel</h3>
+          <p>Op werkdagen antwoorden we meestal binnen 24 uur.</p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 2dekans voor eten</span>
+    <span>Samen tegen voedselverspilling 💚</span>
+  </footer>
+
+</body>
+</html>

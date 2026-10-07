@@ -1,0 +1,425 @@
+/* ========================================================
+   🎨 1. KLEUREN AANPASSEN (Verander hier de kleurcodes!)
+   ======================================================== */
+:root {
+  --donkergroen: #0e5231;   /* Hoofdkleur knoppen en logo */
+  --middengroen: #187741;   /* Hover kleur knoppen */
+  --lichtgroen:  #e7f6ec;   /* Zachte achtergrond voor kaartjes */
+  --achtergrond:  #f8faf8;   /* Algemene achtergrond */
+  --wit:          #ffffff;   /* Kaartjes en blokken */
+  --tekst-donker: #1f2937;   /* Titels en koppen */
+  --tekst-grijs:  #6b7280;   /* Ondertitels en kleine tekst */
+  --randkleur:    #e5e7eb;   /* Lichte lijntjes rondom vakken */
+}
+
+/* ========================================================
+   📏 2. BASIS LAYOUT (Past op 1 scherm zonder scrollen)
+   ======================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--achtergrond);
+  color: var(--tekst-donker);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   🧭 3. DE BOVENSTE BALK (MENU)
+   ======================================================== */
+.navigatie {
+  min-height: 76px;
+  background-color: var(--wit);
+  border-bottom: 1px solid var(--randkleur);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, calc((100% - 1200px) / 2 + 24px));
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--donkergroen);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: var(--tekst-grijs);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 0;
+}
+
+.menu-links a:hover {
+  color: var(--donkergroen);
+}
+
+.menu-links a.actief {
+  color: var(--donkergroen);
+  font-weight: bold;
+  border-bottom: 2px solid var(--donkergroen);
+}
+
+.nav-actieknop {
+  background-color: var(--donkergroen);
+  color: var(--wit);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ========================================================
+   📦 4. DE INHOUD VAN ELKE PAGINA
+   ======================================================== */
+.pagina-inhoud {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.statistieken {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.voordelen-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.home-cta {
+  background-color: var(--donkergroen);
+  color: var(--wit);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagina-inhoud--ruim {
+  padding-top: 32px;
+}
+
+.impact-sectie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pagina-einde {
+  margin-top: auto;
+}
+
+.impact-sectie__intro {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.impact-sectie__intro h2 {
+  margin-bottom: 6px;
+  color: var(--donkergroen);
+  font-size: 20px;
+}
+
+.impact-sectie__intro p {
+  color: var(--tekst-grijs);
+  font-size: 14px;
+}
+
+.impact-sectie__item {
+  min-height: 92px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--wit);
+  border: 1px solid var(--randkleur);
+  border-radius: 14px;
+}
+
+.impact-sectie__icoon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  background: var(--lichtgroen);
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.impact-sectie__item h3 {
+  margin-bottom: 4px;
+  color: var(--donkergroen);
+  font-size: 14px;
+}
+
+.impact-sectie__item p {
+  color: var(--tekst-grijs);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.hero-afbeelding {
+  position: relative;
+  width: min(100%, 560px);
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.hero-afbeelding__img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: right top;
+  border-radius: 14px;
+  display: block;
+}
+
+.prijs-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--wit);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Knoppen en badges */
+.badge {
+  display: inline-block;
+  background-color: var(--lichtgroen);
+  color: var(--donkergroen);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.knop-primair {
+  background-color: var(--donkergroen);
+  color: var(--wit);
+  padding: 14px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.knop-secundair {
+  background-color: transparent;
+  color: var(--donkergroen);
+  border: 1px solid var(--donkergroen);
+  padding: 13px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.witte-kaart {
+  background-color: var(--wit);
+  border: 1px solid var(--randkleur);
+  border-radius: 16px;
+  padding: 18px 16px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.restaurant-sectie {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.restaurant-voordelen h3,
+.restaurant-list h3 {
+  font-size: 18px;
+  color: var(--donkergroen);
+  margin-bottom: 12px;
+}
+
+.restaurant-voordelen ul {
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--tekst-donker);
+}
+
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.restaurant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--randkleur);
+  padding: 10px 0;
+}
+
+.restaurant-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.prijs {
+  font-weight: bold;
+  color: var(--donkergroen);
+  white-space: nowrap;
+}
+
+/* Onderste balk (footer) */
+.footer {
+  min-height: 36px;
+  border-top: 1px solid var(--randkleur);
+  background-color: var(--wit);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, calc((100% - 1200px) / 2 + 24px));
+  font-size: 12px;
+  color: var(--tekst-grijs);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .navigatie {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 10px 20px;
+  }
+
+  .menu-links {
+    order: 1;
+    flex: 0 0 100%;
+    overflow-x: auto;
+    gap: 18px;
+    padding: 4px 0;
+  }
+
+  .menu-links a {
+    white-space: nowrap;
+  }
+
+  .pagina-inhoud {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .pagina-inhoud--ruim {
+    padding-top: 24px;
+  }
+
+  .grid-2,
+  .restaurant-sectie {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .statistieken {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-sectie {
+    grid-template-columns: 1fr;
+  }
+
+  .voordelen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-afbeelding {
+    width: 100%;
+  }
+
+  .hero-afbeelding__img {
+    height: clamp(220px, 55vw, 310px);
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navigatie {
+    padding: 10px 16px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-actieknop {
+    padding: 8px 12px;
+  }
+
+  .pagina-inhoud {
+    padding: 16px;
+  }
+
+  .voordelen-grid {
+    grid-template-columns: 1fr;
+  }
+}
